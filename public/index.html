@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Plotting Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js" integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script> <!-- Chart.js Date-fns Adapter CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script> <!-- Chart.js Financial CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/2.0.1/chartjs-plugin-zoom.min.js" integrity="sha512-wUYbRPLV5zs6IqvWd88HIqZU/b8TBx+I8LEioQ/UC0t5EMCLApqhIAnUg7EsAzdbhhdgW07TqYDdH3QEXRcPOQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Forex Data Plotter</h1>
+    <div class="control-row">
+        <div>
+            <label for="instrument">Forex Pair:</label>
+            <select id="instrument">
+                <option value="eurusd" selected>EUR/USD</option>
+                <option value="gbpusd">GBP/USD</option>
+                <option value="usdjpy">USD/JPY</option>
+                <option value="usdchf">USD/CHF</option>
+                <option value="audusd">AUD/USD</option>
+                <option value="usdcad">USD/CAD</option>
+                <option value="nzdusd">NZD/USD</option>
+            </select>
+        </div>
+        <div>
+            <label for="fromDate">From:</label>
+            <input type="date" id="fromDate">
+        </div>
+        <div>
+            <label for="toDate">To:</label>
+            <input type="date" id="toDate">
+        </div>
+        <div>
+            <label for="timeframe">Timeframe:</label>
+            <select id="timeframe">
+                <option value="m1">1 Minute</option>
+                <option value="m5">5 Minutes</option>
+                <option value="m15">15 Minutes</option>
+                <option value="m30">30 Minutes</option>
+                <option value="h1">1 Hour</option>
+                <option value="h4" selected>4 Hours</option>
+                <option value="d1">1 Day</option>
+                <option value="w1">1 Week</option>
+                <option value="mn1">1 Month</option>
+            </select>
+        </div>
+        <button id="fetchData">Fetch Data</button>
+    </div>
+    <div>
+        <canvas id="forexChart"></canvas>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

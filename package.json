@@ -1,0 +1,14 @@
+{
+  "name": "forex-plotting-website",
+  "version": "1.0.0",
+  "description": "A website to display forex pair plots using dukascopy-node API.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "chartjs-plugin-zoom": "^2.0.1",
+    "dukascopy-node": "1.36.2",
+    "express": "^4.17.1"
+  }
+}
